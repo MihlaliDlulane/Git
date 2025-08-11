@@ -1,5 +1,5 @@
 import argparse,sys
-from libs import library
+from lib import library
 
 argparser = argparse.ArgumentParser()
 argsSubparsers = argparser.add_subparsers(title="Commands", dest="command")
@@ -14,7 +14,7 @@ argsp.add_argument("path",
 
 
 def command_init(args):
-    repo_create(args.path)
+    library.repo_create(args.path)
 
 def main(argv=sys.argv[1:]):
     args = argparser.parse_args(argv)
